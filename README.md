@@ -1,8 +1,8 @@
-# restoreMySQL
+# restore MySQL database's
 Restore many files sql files in a guided way.
 Will import any sql fils.
 
-##How to run:
+## How to run:
 ```
 cd [path to folder with sql files]
 wget https://raw.githubusercontent.com/Eideen/restoreMySQL/master/db_restore.sh
@@ -13,7 +13,7 @@ or
 ./db_restore.sh [path to folder with sql files]
 ```
 
-##example of output:
+## Example of output:
 
 >```
 >Input username for mysql server [USER]:
