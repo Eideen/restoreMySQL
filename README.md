@@ -16,6 +16,11 @@ or
 ## Example of output:
 
 >```
+>$ll -h
+>-rw-r--r-- 1 root root 8.3M Nov  7 22:22 db1.sql
+>-rw-r--r-- 1 root root 299M Nov  7 22:22 db2.sql
+>
+>$./db_restore.sh
 >Input username for mysql server [USER]:
 >Input password for mysql server:
 >Input hostname for mysql server [localhost]:
@@ -25,19 +30,19 @@ or
 >* performance_schema
 >Warning: importing database will overwrite your exsisting data!
 >
->Are you sure, you wanted to import librenms [y/N]y
->librenms exist
->importing data in librenms
+>Are you sure, you wanted to import db1 [y/N]y
+>db1 exist
+>importing data in db1
 >8.24MiB 0:00:16 [ 519KiB/s] [====================================================>] 100%
 >
->Are you sure, you wanted to import observium [y/N]
->observium exist
->importing data in observium
+>Are you sure, you wanted to import db2 [y/N]
+>db2 exist
+>importing data in db2
 > 298MiB 0:02:39 [1.87MiB/s] [====================================================>] 100%
 >list of databases after:
 >* information_schema
->* librenms
+>* db1
 >* mysql
->* observium
+>* db2
 >* performance_schema
 >```
