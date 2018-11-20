@@ -6,6 +6,7 @@ Will import any sql fils.
 ```
 cd [path to folder with sql files]
 wget https://raw.githubusercontent.com/Eideen/restoreMySQL/master/db_restore.sh
+chmod +x ./db_restore.sh
 ./db_restore.sh
 ```
 or 
