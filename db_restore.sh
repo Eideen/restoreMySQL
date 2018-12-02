@@ -7,13 +7,13 @@ IFS=$'\n\t'
 
 [ -z ${1+x} ] || cd $1
 
-FILES=$(pwd)/*.sql	
-if [ $(ls | grep '\.sql' | wc -l) == 0 ] 
-then
- echo "no databases to import in $(pwd)
- ./db_restore.sh [path to folder with sql files]"
- exit
-fi
+FILES=$(pwd)/*.sql
+ if [ $(ls | grep '\.sql' | wc -l) == 0 ] 
+  then
+   echo "no databases to import in $(pwd)
+    ./db_restore.sh [path to folder with sql files]"
+  exit
+ fi
 
 #control for dependeces
 # Linux bin paths
@@ -98,12 +98,12 @@ NEW=-1 #flag for status
 			do
 			[ "$db" = "$i" ] && NEW=1 || : 
 			done
-			
+
 			if [ "$NEW" == "-1" ]
 				then
 					echo "Creating database database $db"
-					mysqladmin -h $MyHOST -u $MyUSER -p$MyPASS create $db			
-			
+					mysqladmin -h $MyHOST -u $MyUSER -p$MyPASS create $db
+
 				else
 					echo "$GREEN$db exist ${NC}"
 			fi
@@ -119,6 +119,13 @@ echo
 echo "no databases selected to be to import" 
 exit
 fi
+
+read -p "Do you like to update your database privilege [y/N]" -n 1 -r
+ echo    # (optional) move to a new line
+   if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+  mysqladmin flush-privileges -h $MyHOST -u $MyUSER -p$MyPASS
+  fi
 
 listdb=$(echo ${listdb::-2}) #remove trail empty line
 listdb=$(echo -e "$listdb")
