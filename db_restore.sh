@@ -44,18 +44,18 @@ BAD="${RED}YES${NC}"
 
 MyUSER=$(whoami)
 read -r -t 60 -p "${NC}Input username for mysql server [$MyUSER]: $GREEN" 
-if [ $REPLY != "" ]
+if [[ $REPLY != "" ]]
 then
 MyUSER=$REPLY
 fi
 
 MyPASS=""
 read -s -r -t 60 -p "${NC}Input password for mysql server: $GREEN"  
-if [ $REPLY != "" ]
+if [[ $REPLY != "" ]]
 then
 MyPASS=$REPLY
 fi
-
+echo
 MyHOST="localhost"
 read -r -t 60 -p "${NC}Input hostname for mysql server [$MyHOST]: $GREEN"  
 if [[ $REPLY != "" ]]
