@@ -2,6 +2,11 @@
 Restore many files sql files in a guided way.
 Will import any sql fils.
 
+## dependency: 
+- MYSQL
+- PV
+
+
 ## How to run:
 ```
 cd [path to folder with sql files]
