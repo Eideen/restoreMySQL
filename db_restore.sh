@@ -65,12 +65,6 @@ then
 MyHOST=$REPLY
 fi
 
-
-# DB skip list
-SKIP="information_schema
-performance_schema
-another_one_db"
-
 # Get all databases
 DBS="$($MYSQL --connect-timeout=5 -h $MyHOST -u $MyUSER -p$MyPASS -Bse 'show databases')" || exit
 
