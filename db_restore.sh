@@ -1,7 +1,6 @@
 #!/bin/bash
 # Shell script to backup MySQL database
-set -euo pipefail
-IFS=$'\n\t'
+
 
 #Files to restore
 
@@ -29,6 +28,9 @@ then
  else install="false"
 fi
 done 
+
+set -euo pipefail
+IFS=$'\n\t'
 
 #Text Colors
 GREEN=`tput setaf 2`
